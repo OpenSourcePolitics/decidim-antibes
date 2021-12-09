@@ -23,40 +23,40 @@ module Decidim
         }
       end
       let(:body) do
-        JSON.dump({
-                    "type": "FeatureCollection",
-                    "version": "draft",
-                    "features": [
-                      {
-                        "type": "Feature",
-                        "geometry": {
-                          "type": "Point",
-                          "coordinates": [
-                            3.824727,
-                            43.577467
-                          ]
-                        },
-                        "properties": {
-                          "label": "282 Kevin Brook, Imogeneborough, CA 58517",
-                          "score": 0.3143790909090909,
-                          "id": "06004_0710",
-                          "name": "Rue",
-                          "postcode": "34430",
-                          "citycode": "34270",
-                          "x": 766637.42,
-                          "y": 6275726.47,
-                          "city": "Saint-Jean-de-Védas",
-                          "context": "34, Hérault, Occitanie",
-                          "type": "street",
-                          "importance": 0.45817
-                        }
-                      }
-                    ],
-                    "attribution": "BAN",
-                    "licence": "ETALAB-2.0",
-                    "query": "rue des ",
-                    "limit": 5
-                  })
+        JSON.dump(
+          "type": "FeatureCollection",
+          "version": "draft",
+          "features": [
+            {
+              "type": "Feature",
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  3.824727,
+                  43.577467
+                ]
+              },
+              "properties": {
+                "label": "282 Kevin Brook, Imogeneborough, CA 58517",
+                "score": 0.3143790909090909,
+                "id": "06004_0710",
+                "name": "Rue",
+                "postcode": "34430",
+                "citycode": "34270",
+                "x": 766_637.42,
+                "y": 6_275_726.47,
+                "city": "Saint-Jean-de-Védas",
+                "context": "34, Hérault, Occitanie",
+                "type": "street",
+                "importance": 0.45817
+              }
+            }
+          ],
+          "attribution": "BAN",
+          "licence": "ETALAB-2.0",
+          "query": "rue des ",
+          "limit": 5
+        )
       end
 
       let(:form_params) do
@@ -84,15 +84,16 @@ module Decidim
       let(:command) { described_class.new(form) }
 
       before do
-        stub_request(:get, "https://api-adresse.data.gouv.fr/search/?q=282%20Kevin%20Brook,%20Imogeneborough,%20CA%2058517").
-          with(
+        stub_request(:get, "https://api-adresse.data.gouv.fr/search/?q=282%20Kevin%20Brook,%20Imogeneborough,%20CA%2058517")
+          .with(
             headers: {
-              'Accept'=>'*/*',
-              'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-              'Host'=>'api-adresse.data.gouv.fr',
-              'User-Agent'=>'Ruby'
-            }).
-          to_return(status: 200, body: body, headers: {})
+              "Accept" => "*/*",
+              "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+              "Host" => "api-adresse.data.gouv.fr",
+              "User-Agent" => "Ruby"
+            }
+          )
+          .to_return(status: 200, body: body, headers: {})
       end
 
       describe "when the form is not valid" do
@@ -124,7 +125,7 @@ module Decidim
               user.reload
             end.to change(User, :count).by(0)
                                        .and broadcast(:invalid)
-                                              .and change(user.reload, :invitation_token)
+              .and change(user.reload, :invitation_token)
             expect(ActionMailer::DeliveryJob).to have_been_enqueued.on_queue("mailers")
           end
         end

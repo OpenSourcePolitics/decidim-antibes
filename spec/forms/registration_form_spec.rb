@@ -33,40 +33,40 @@ module Decidim
     let(:body_address) { address }
     let(:body_address_id) { address_id }
     let(:body) do
-      JSON.dump({
-                  "type": "FeatureCollection",
-                  "version": "draft",
-                  "features": [
-                    {
-                      "type": "Feature",
-                      "geometry": {
-                        "type": "Point",
-                        "coordinates": [
-                          3.824727,
-                          43.577467
-                        ]
-                      },
-                      "properties": {
-                        "label": "#{body_address}",
-                        "score": 0.3143790909090909,
-                        "id": "#{body_address_id}",
-                        "name": "Rue",
-                        "postcode": "34430",
-                        "citycode": "34270",
-                        "x": 766637.42,
-                        "y": 6275726.47,
-                        "city": "Saint-Jean-de-Védas",
-                        "context": "34, Hérault, Occitanie",
-                        "type": "street",
-                        "importance": 0.45817
-                      }
-                    }
-                  ],
-                  "attribution": "BAN",
-                  "licence": "ETALAB-2.0",
-                  "query": "rue des ",
-                  "limit": 5
-                })
+      JSON.dump(
+        "type": "FeatureCollection",
+        "version": "draft",
+        "features": [
+          {
+            "type": "Feature",
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                3.824727,
+                43.577467
+              ]
+            },
+            "properties": {
+              "label": body_address.to_s,
+              "score": 0.3143790909090909,
+              "id": body_address_id.to_s,
+              "name": "Rue",
+              "postcode": "34430",
+              "citycode": "34270",
+              "x": 766_637.42,
+              "y": 6_275_726.47,
+              "city": "Saint-Jean-de-Védas",
+              "context": "34, Hérault, Occitanie",
+              "type": "street",
+              "importance": 0.45817
+            }
+          }
+        ],
+        "attribution": "BAN",
+        "licence": "ETALAB-2.0",
+        "query": "rue des ",
+        "limit": 5
+      )
     end
 
     let(:attributes) do
@@ -88,16 +88,16 @@ module Decidim
     end
 
     before do
-      stub_request(:get, "https://api-adresse.data.gouv.fr/search/?q=#{address}").
-        with(
+      stub_request(:get, "https://api-adresse.data.gouv.fr/search/?q=#{address}")
+        .with(
           headers: {
-            'Accept' => '*/*',
-            'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-            'Host' => 'api-adresse.data.gouv.fr',
-            'User-Agent' => 'Ruby'
-          }).
-        to_return(status: 200, body: body, headers: {})
-
+            "Accept" => "*/*",
+            "Accept-Encoding" => "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+            "Host" => "api-adresse.data.gouv.fr",
+            "User-Agent" => "Ruby"
+          }
+        )
+        .to_return(status: 200, body: body, headers: {})
     end
 
     context "when everything is OK" do
