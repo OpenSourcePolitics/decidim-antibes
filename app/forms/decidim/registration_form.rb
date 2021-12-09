@@ -63,7 +63,7 @@ module Decidim
       return if address_id.blank?
       return if list_address_ids.include?(address_id)
 
-      errors.add :address, I18n.t("")
+      errors.add :address, I18n.t("devise.address.no_match")
     end
 
     def list_address_ids
