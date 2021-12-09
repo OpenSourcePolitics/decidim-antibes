@@ -59,15 +59,15 @@ module Decidim
     end
 
     def address_exists?
-      return unless address.present?
-      return unless address_id.present?
+      return if address.blank?
+      return if address_id.blank?
       return if list_address_ids.include?(address_id)
 
       errors.add :address, I18n.t("devise.address.no_match")
     end
 
     def list_address_ids
-      JSON.parse(query_api).fetch("features").map{|feature| feature.dig("properties", "id")}
+      JSON.parse(query_api).fetch("features").map { |feature| feature.dig("properties", "id") }
     end
 
     def query_api
