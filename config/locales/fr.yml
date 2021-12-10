@@ -41,7 +41,8 @@ fr:
           terms: les termes et conditions d'utilisation
           tos_agreement: En vous inscrivant, vous acceptez %{link}.
           tos_title: Conditions d'utilisation
-          username_help: Votre nom et prénom sont visibles sur la plateforme et apparaissent dans votre profil, vos contributions et vos messages.
+          username_help: Votre nom et prénom sont visibles sur la plateforme et apparaissent
+            dans votre profil, vos contributions et vos messages.
   devise:
     failure:
       invited: Vous avez une invitation en attente, acceptez-la pour terminer la création
