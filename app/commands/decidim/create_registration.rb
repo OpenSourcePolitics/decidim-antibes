@@ -58,7 +58,7 @@ module Decidim
     end
 
     def complete_name
-      [form.first_name, form.name].map { |word| word.strip.titleize }.join(" ")
+      [form.first_name.titleize, form.name.upcase].map(&:strip).join(" ")
     end
   end
 end

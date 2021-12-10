@@ -9,7 +9,7 @@ module Decidim
 
       let(:name) { "name" }
       let(:first_name) { "a great" }
-      let(:complete_name) { "A Great Name" }
+      let(:complete_name) { "A Great NAME" }
       let(:nickname) { "nickname" }
       let(:email) { "user@example.org" }
       let(:password) { "Y1fERVzL2F" }
