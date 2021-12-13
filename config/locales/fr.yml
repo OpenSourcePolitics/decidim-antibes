@@ -44,9 +44,10 @@ fr:
           username_help: Votre nom et prénom sont visibles sur la plateforme et apparaissent
             dans votre profil, vos contributions et vos messages.
   devise:
+    address:
+      no_match: L'addresse postal renseignée dans le formulaire est valide.
     failure:
-      invited: Vous avez une invitation en attente, acceptez-la pour terminer la création
-        de votre compte.
+      invited: Vous avez une invitation en attente, acceptez-la pour terminer la création de votre compte.
     registrations:
       new:
         sign_up: S'inscrire
