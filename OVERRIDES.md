@@ -1,6 +1,6 @@
 # Overiden files
 
-### Load decidim-awesome assets only if dependencie is present
+### Load decidim-awesome assets only if dependency is present
 
 * app/views/layouts/decidim/_head.html.erb:33
 
