@@ -15,6 +15,12 @@ gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publ
 
 gem "bootsnap", "~> 1.4"
 
+gem "figaro"
+
+gem "whenever", require: false
+
+gem "jquery-ui-rails"
+
 gem "dotenv-rails"
 
 gem "puma", "~> 5.3.1"
