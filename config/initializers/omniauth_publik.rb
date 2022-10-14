@@ -6,7 +6,7 @@ if Rails.application.secrets.dig(:omniauth, :publik).present?
   Rails.application.config.middleware.use OmniAuth::Builder do
     provider(
       :publik,
-      setup: ->(env) {
+      setup: lambda { |env|
         request = Rack::Request.new(env)
         organization = Decidim::Organization.find_by(host: request.host)
         provider_config = organization.enabled_omniauth_providers[:publik]
