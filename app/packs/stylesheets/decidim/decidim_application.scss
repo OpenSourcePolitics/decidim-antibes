@@ -1,3 +1,11 @@
+// This is a file that can be overridden by the application in order to override styles
+// Notice that this file is included at the very end of the stylesheets packs to have
+// more priority
+//
+// To override CSS variables or Foundation settings use _decidim-settings.scss
+//
+// By default this is empty.
+
 // // Variables
 //
 // $primary: #ef604d;
@@ -45,8 +53,6 @@
 //   --facebook: #{$facebook};
 //   --google: #{$google};
 // }
-
-@import "decidim/application";
 
 .new-user-autocomplete {
   box-shadow: 0 0 5px #e8e8e8;
