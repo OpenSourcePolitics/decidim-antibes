@@ -896,6 +896,7 @@ DEPENDENCIES
   decidim-decidim_awesome (~> 0.8.1)
   decidim-dev!
   decidim-homepage_interactive_map!
+  decidim-templates
   decidim-term_customizer!
   delayed_job_active_record
   dotenv-rails
