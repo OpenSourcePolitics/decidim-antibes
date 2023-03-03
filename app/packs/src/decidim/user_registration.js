@@ -1,3 +1,5 @@
+import autocomplete from "jquery-ui/ui/widgets/autocomplete";
+
 $(document).ready(() => {
     const registerForm = $("#register-form");
 
