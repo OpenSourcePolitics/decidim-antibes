@@ -19,6 +19,7 @@
     "jsrender": "^1.0.13",
     "leaflet": "^1.9.3",
     "leaflet.featuregroup.subgroup": "^1.0.2",
+    "leaflet.markercluster": "^1.5.3",
     "proj4": "^2.9.0",
     "proj4leaflet": "^1.0.2",
     "select2": "^4.1.0-rc.0",
