@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git
-  revision: a9d4f0d4a8d790676e7a274ad1febe406bc8f936
+  revision: 3bbd5fff51fbfa94ff6e784baa73af190b1c679d
   branch: release/0.26-stable
   specs:
     decidim-homepage_interactive_map (2.0.0)
@@ -930,4 +930,4 @@ RUBY VERSION
    ruby 2.7.5p203
 
 BUNDLED WITH
-   2.4.6
+   2.4.9
