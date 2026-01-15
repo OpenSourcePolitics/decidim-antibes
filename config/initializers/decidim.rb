@@ -20,7 +20,18 @@ Decidim.configure do |config|
   config.maps = {
     provider: :here,
     api_key: Rails.application.secrets.maps[:api_key],
-    static: { url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview" }
+    autocomplete: {
+      address_format: [%w(houseNumber street), "city", "country"]
+    },
+    dynamic: {
+      provider: :osm,
+      tile_layer: {
+        url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        attribution: %(
+        &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors
+      )
+      }
+    }
   }
   config.geocoder = {
     timeout: 5,
