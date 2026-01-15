@@ -24,6 +24,8 @@ gem "jquery-ui-rails"
 
 gem "dotenv-rails"
 
+gem "nokogiri", "1.13.10"
+
 gem "puma", "~> 5.3.1"
 gem "uglifier", "~> 4.1"
 
