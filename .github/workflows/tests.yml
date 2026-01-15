@@ -41,7 +41,7 @@ jobs:
           restore-keys: |
             npm-
       - name: Install JS dependencies
-        run: npm ci
+        run: yarn install --prefer-offline --frozen-lockfile
       - run: bundle exec rubocop -P
         name: Lint Ruby files
   tests:
