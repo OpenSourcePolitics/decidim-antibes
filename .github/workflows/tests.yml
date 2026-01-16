@@ -7,7 +7,7 @@ env:
   RUBY_VERSION: 2.7.5
   RAILS_ENV: test
   NODE_VERSION: 16.9.1
-  RUBYOPT: '-W:no-deprecated -rlogger'
+  RUBYOPT: '-W:no-deprecated'
 
 jobs:
   lint:
