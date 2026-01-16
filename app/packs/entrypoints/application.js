@@ -19,3 +19,4 @@
 // ActiveStorage.start()
 
 import "src/decidim/user_registration"
+import "src/decidim/geocoding/provider/here"
