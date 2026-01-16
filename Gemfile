@@ -35,6 +35,8 @@ gem "ruby-progressbar"
 
 gem "letter_opener_web", "~> 1.3"
 
+gem 'logger', '~> 1.6'
+
 gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
 gem "fog-aws"
 gem "sys-filesystem"
